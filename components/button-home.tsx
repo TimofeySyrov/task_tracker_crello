@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
+import Button from '@material-ui/core/Button';
 
-export default function button() {
-    return (
-        <div className="button-home">
-
-        </div>
-    )
+export default class HomeButton extends Component {
+    render() {
+        return (
+            <Button>
+                
+            </Button>
+        )
+    }
 }
