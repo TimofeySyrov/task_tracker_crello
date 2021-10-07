@@ -1,11 +1,9 @@
-import Sample from '../components/sample';
-import Buttonui from '../components/sample-mui';
+import Input from '../components/input';
 
 function HomePage() {
   return (
     <>
-      <Buttonui />
-      <Sample name="Hello, world!" />
+      <Input />
     </>
   );
 }
