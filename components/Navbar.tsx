@@ -1,20 +1,17 @@
-import Brand from '../images/Brand.svg'
+import profile from '../public/profile.svg'
+import Button from '@material-ui/core/Button'
 
 export default function Heading(props:any) {
   return(
     <div className="ContainerNavbar">
       <div className="Navbar">
-        <button className="Navbar__BtnHome bttn"></button>
-        <button className="Navbar__MyBoards bttn">My Boards</button>
-        <button className="Navbar__CreateBoard bttn">Create Board</button>
+        <Button className="Navbar__BtnHome bttn"></Button>
+        <Button className="Navbar__MyBoards bttn">My Boards</Button>
+        <Button className="Navbar__CreateBoard bttn">Create Board</Button>
         <a href="#" className="Navbar__brand">
-          {/* <img className="brandImg" width="138" height="32" src="../images/Brand.jpg" alt="brand"/>
-           */}
-
           </a>
         <a href="#" className="Navbar__LoginIcon">
-          {/* <img  width="138" height="32" src={Brand} alt="profile"/>
-           */}
+          {/* <img width="41" height="41" src={profile} alt="profile"/> */}
            <div className="Navbar__LoginImg"></div>
         </a>
       </div>
