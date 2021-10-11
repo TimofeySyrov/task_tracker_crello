@@ -1,6 +1,6 @@
-import LoginButton from '../components/loginButton'
+import LoginButton from './loginButton'
 
-export default function Content(props:any) {
+export default function authBtn(props:any) {
     return(
         <div className="content">
             <LoginButton />
