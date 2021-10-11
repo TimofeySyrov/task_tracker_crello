@@ -7,8 +7,8 @@ export default function HomePage() {
   
   return (
     <div>
-      <Heading heading="Heading"/> 
-      <Content></Content>
+      <Heading/> 
+      <Content/>
     </div>
   )
 

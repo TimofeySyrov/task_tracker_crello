@@ -1,13 +1,10 @@
 
-
-export default function Heading(props:any) {
+export default function Content(props:any) {
     return(
-        <div className="ContainerContent">
             <div className="content">
                 <button className="content__authorization bttn">
                     authorization
                 </button>
             </div>
-        </div>
     )
 }
