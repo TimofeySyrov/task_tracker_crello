@@ -20,8 +20,12 @@ export default function AuthProfile(props:any) {
     </div>
     <div className="containerProfile">
         <div className="content">
-            <Box className="CardProfile" sx={{position:'absolute', top: 100}}>
-                <UserAvatar />
+            {/* Костыль с  position:'absolute' использу т.к.
+                для CardProfile нужен родиельский элемент
+                Выдает ошибку если вынести отдельно
+             */}
+            <Box className="CardProfile" sx={{position:'absolute', top: 220, display: 'flex'}}>
+                <UserAvatar/>
                 <Box width={380}>
                 <ProfileCard />
                 </Box>
