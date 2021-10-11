@@ -2,6 +2,11 @@ body {
     padding: 0;
     margin: 0;
     background-color: #284968;
+    height: 100%;
+}
+
+html {
+    height: 100%;
 }
 
 .ContainerNavbar {
@@ -46,6 +51,7 @@ body {
     height: 41px;
     position: relative;
     margin-left: 4px;
+    padding-left: 25px;
 }
 
 .Navbar__CreateBoard {
@@ -58,7 +64,7 @@ body {
     height: 24px;
     position: absolute;
     background-image: url('../images/logo.svg');
-    left: 2px;
+    left: 7px;
 }
 
 .Navbar__brand {
@@ -73,6 +79,19 @@ body {
     background-image: url('../images/profile.svg');
 }
 
-.content__authorization {
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 
+.content__authorization {
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 0.75px;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
 }
