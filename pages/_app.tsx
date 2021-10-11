@@ -1,9 +1,8 @@
 import './style.css'
 
-function Header({Component, pageProps}:any) {
+function Navbar({Component, pageProps}:any) {
 
     return <Component {...pageProps} />
 }
 
-export default Header
-
+export default Navbar

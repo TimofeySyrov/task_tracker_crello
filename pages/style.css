@@ -45,6 +45,18 @@ body {
     width: 28.03px;
     height: 24px;
     position: absolute;
-    background-image: url('../image/logo.svg');
+    background-image: url('../images/logo.svg');
     left: 2px;
+}
+
+.brand {
+    margin: 0 auto;
+    width: 138px;
+    height: 32px;
+}
+
+.LoginImg {
+    width: 41px;
+    height: 41px;
+    background-image: url('../images/profile.svg');
 }
