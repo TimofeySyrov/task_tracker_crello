@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: #284968;
 }
 
 .ContainerNavbar {
@@ -13,10 +14,21 @@ body {
     width: 100%;
 }
 
-.BtnHome {
+.Navbar .Navbar__BtnHome {
     width: 41px;
     height: 41px;
     background-color: #284968;
+    position: relative;
+}
+
+.Navbar__BtnHome::before {
+    content: '';
+    width: 17px;
+    height: 19px;
+    position: absolute;
+    top: 11px;
+    left: 12px;
+    background-image: url('../images/home.svg');
 }
 
 .bttn {
@@ -29,18 +41,18 @@ body {
     cursor: pointer;
 }
 
-.MyBoards {
+.Navbar__MyBoards {
     width: 160px;
     height: 41px;
     position: relative;
     margin-left: 4px;
 }
 
-.CreateBoard {
+.Navbar__CreateBoard {
     margin-left: 4px;
 }
 
-.MyBoards::before {
+.Navbar__MyBoards::before {
     content: '';
     width: 28.03px;
     height: 24px;
@@ -49,14 +61,18 @@ body {
     left: 2px;
 }
 
-.brand {
+.Navbar__brand {
     margin: 0 auto;
     width: 138px;
     height: 32px;
 }
 
-.LoginImg {
+.Navbar__LoginImg {
     width: 41px;
     height: 41px;
     background-image: url('../images/profile.svg');
+}
+
+.content__authorization {
+
 }
