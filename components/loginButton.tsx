@@ -6,7 +6,7 @@ import authorization from '../states/authorization';
 
 const LoginButton = observer(() => (
   <Link href="/">
-    <Button variant="contained" onClick={() => authorization.login()}>
+    <Button className="content__authorization bttn" variant="contained" onClick={() => authorization.login()}>
       Authorization
     </Button>
   </Link>

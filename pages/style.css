@@ -39,9 +39,6 @@ html {
 .bttn {
     background-color: #4E97C2;
     border: none;
-    border-radius: 4px;
-    font-weight: 500;
-    font-size: 20px;
     color: #fff;
     cursor: pointer;
 }
