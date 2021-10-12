@@ -1,23 +1,21 @@
-import React from 'react';
-import Heading from '../components/Navbar'
-import Content from '../components/Content'
+import Header from '../components/navbar';
+import LoginBtn from '../components/loginButton';
 import authorization from '../states/authorization';
-import AuthProfile from '../components/profile-autorized'
+import AuthProfile from '../components/profileAutorized';
 
-
-export default function HomePage() {
-
+function HomePage() {
   if (authorization.isLogin) {
     return (
-     <AuthProfile />
+      <AuthProfile />
     );
   }
 
   return (
-    <div>
-      <Heading/> 
-      <Content/>
-    </div>
-  )
-
+    <>
+      <Header />
+      <LoginBtn />
+    </>
+  );
 }
+
+export default HomePage;
