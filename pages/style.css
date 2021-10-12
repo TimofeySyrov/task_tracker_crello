@@ -5,90 +5,43 @@ body {
     height: 100%;
 }
 
-html {
-    height: 100%;
-}
-
-.ContainerNavbar {
+.containerNavbar {
     padding: 4px;
     background-color: #026AA7;
 }
 
-.Navbar {
+.navbar {
     display: flex;
     width: 100%;
 }
 
-.Navbar .Navbar__BtnHome {
-    width: 41px;
-    height: 41px;
-    background-color: #284968;
-    position: relative;
-}
-
-.Navbar__BtnHome::before {
+.navbar__btnHome::before {
     content: '';
     width: 17px;
     height: 19px;
     position: absolute;
     top: 11px;
     left: 12px;
-    background-image: url('../images/home.svg');
+    background-image: url('/images/home.svg');
 }
 
-.bttn {
-    background-color: #4E97C2;
+/* .bttn {
+    ;
     border: none;
     color: #fff;
-    cursor: pointer;
-}
+} */
 
-.Navbar__MyBoards {
-    width: 160px;
-    height: 41px;
-    position: relative;
-    margin-left: 4px;
-    padding-left: 25px;
-}
-
-.Navbar__CreateBoard {
-    margin-left: 4px;
-}
-
-.Navbar__MyBoards::before {
+.navbar__myBoards::before {
     content: '';
     width: 28.03px;
     height: 24px;
     position: absolute;
-    background-image: url('../images/logo.svg');
+    background-image: url('/images/logo.svg');
     left: 7px;
 }
 
-.Navbar__brand {
+.navbar__brand {
     margin: 0 auto;
     width: 138px;
     height: 32px;
-}
-
-.Navbar__LoginImg {
-    width: 41px;
-    height: 41px;
-    background-image: url('../images/profile.svg');
-}
-
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.content__authorization {
-    text-transform: uppercase;
-    font-size: 18px;
-    letter-spacing: 0.75px;
-    width: 200px;
-    height: 50px;
-    position: absolute;
-    top: 50%;
 }
