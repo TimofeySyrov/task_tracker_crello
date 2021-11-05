@@ -15,14 +15,14 @@ const Board = observer(() => {
   useEffect(() => {
     const { id } = router.query;
 
-    if(!router.isReady) return;
-    
-    if(id) {
+    if (!router.isReady) return;
+
+    if (id) {
       boards.getActiveBoard(`${id}`);
     }
-  }, [router.isReady])
+  }, [router.isReady]);
 
-  if(isLoginIn) {
+  if (isLoginIn) {
     return (
       <Box
         sx={{
@@ -41,12 +41,12 @@ const Board = observer(() => {
           },
         }}
       >
-        {boards.activeBoard?.lists?.map(list => {
+        {boards.activeBoard?.lists?.map((list) => {
           return <ColumnCard cards={list.cards} name={list.name} key={list.id} />;
         })}
-    </Box>
-  );
-}
+      </Box>
+    );
+  }
 
   return <>Loading...</>;
 });

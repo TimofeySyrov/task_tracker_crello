@@ -13,9 +13,20 @@ class BoardsStore {
   public boards: IBoard[] = [];
   public activeBoard: IActiveBoard | null = null;
   public activeCard: IActiveCard | null = null;
+  public currentCard: string = '';
 
   constructor() {
     makeAutoObservable(this);
+  }
+
+  public changeCurrentCard(id: string) {
+    this.currentCard = id;
+    console.log(this.currentCard);
+  }
+
+  public replaceCard(id) {
+    console.log(id);
+    console.log(this.activeBoard);
   }
 
   public increaseCurrentCountBoard() {
