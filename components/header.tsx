@@ -17,7 +17,7 @@ const Header = observer(() => {
   const { user } = useStore();
 
   return (
-    <AppBar position="static" sx={{ height: '49px', backgroundColor: '#026AA7' }}>
+    <AppBar position="static" sx={{ height: '49px', backgroundColor: 'secondary.main' }}>
       <Toolbar variant="dense" sx={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr' }}>
         <Box sx={{ display: 'flex', gap: '4px' }}>
           <Link href="/">
@@ -38,13 +38,13 @@ const Header = observer(() => {
             <Button
               variant="contained"
               sx={{
+                width: '160px',
+                height: '41px',
                 display: 'flex',
                 justifyContent: 'space-between',
-                width: '160px',
                 backgroundColor: router.asPath === '/boards' ? '#284968' : '#4E97C2',
                 textTransform: 'capitalize',
                 fontSize: '20px',
-                height: '41px',
                 letterSpacing: 'normal',
               }}
             >
@@ -56,12 +56,11 @@ const Header = observer(() => {
               variant="contained"
               sx={{
                 width: '142px',
+                height: '41px',
+                padding: '0',
                 backgroundColor: router.asPath === '/creating-board' ? '#284968' : '#4E97C2',
                 textTransform: 'capitalize',
-                fontSize: '20px',
-                padding: '0',
-                height: '41px',
-                letterSpacing: 'normal',
+                fontSize: 'h3.fontSize',
               }}
             >
               create board
@@ -70,19 +69,11 @@ const Header = observer(() => {
         </Box>
         <Box sx={{ display: 'flex' }}>
           <Image src={LogoIcon} alt="" />
-          <Typography
-            component="h1"
-            variant="h4"
-            color="#80B4D3"
-            fontStyle="italic"
-            fontWeight={500}
-            fontSize={38}
-            line-height={45}
-          >
+          <Typography component="h1" variant="h1" color="text.secondary" fontStyle="italic">
             Crello
           </Typography>
         </Box>
-        <Box sx={{ marginLeft: 'auto' }}>
+        <Box sx={{ ml: 'auto' }}>
           {isLoginIn && user.activeUser ? (
             <UserAvatar
               size="mini"
