@@ -13,20 +13,34 @@ class BoardsStore {
   public boards: IBoard[] = [];
   public activeBoard: IActiveBoard | null = null;
   public activeCard: IActiveCard | null = null;
-  public currentCard: string = '';
+  public currentCard = null;
 
   constructor() {
     makeAutoObservable(this);
   }
 
   public changeCurrentCard(id: string) {
-    this.currentCard = id;
-    console.log(this.currentCard);
+    this.activeBoard!.lists?.forEach((list) => {
+      list.actions?.forEach((action) => {
+        if (action.id === id) {
+          this.currentCard = action;
+        }
+      });
+    });
   }
 
   public replaceCard(id) {
-    console.log(id);
-    console.log(this.activeBoard);
+    this.activeBoard!.lists?.forEach((list) => {
+      list.actions?.forEach((action, i, actions) => {
+        if (action.id === id) {
+          console.log('test');
+          const currentIndex = actions.indexOf(this.currentCard);
+          actions.splice(currentIndex, 1);
+          const dropIndex = actions.indexOf(action);
+          actions.splice(dropIndex, 0, action);
+        }
+      });
+    });
   }
 
   public async createCard(card: Partial<ICard>) {

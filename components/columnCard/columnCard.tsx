@@ -13,9 +13,12 @@ const ColumnCard = observer(({ id, name, actions }: IList) => {
 
   function dragStartHandler(event, id) {
     boards.changeCurrentCard(id);
+    event.target.style.background = 'red';
   }
 
-  function dragEndHandler(event) {}
+  function dragEndHandler(event) {
+    event.target.style.background = '';
+  }
 
   function dragOverHandler(event) {
     event.preventDefault();
