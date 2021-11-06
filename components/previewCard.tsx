@@ -1,5 +1,6 @@
 import { Avatar, Card, CardContent, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import Link from 'next/link';
 
 import IUser from '../utils/interfaces/IUser';
 import Label from './label';
@@ -7,16 +8,16 @@ import Label from './label';
 type props = {
   id: string;
   text: string;
-  date: string;
   label?: string;
   members?: IUser[];
 };
 
-const PreviewCard = ({ id, text, date, label, members }: props) => {
+const PreviewCard = ({ id, text, label, members }: props) => {
   let avatars = null;
 
-  const performDate = (value: string) => {
-    const date = new Date(value);
+  // Получаем дату создания карточки из её ID
+  const performDate = (cardID: string) => {
+    const date = new Date(1000 * parseInt(cardID.substring(0, 8), 16))
     const month = date.toLocaleString('EN-en', { month: 'short' });
     const day = date.getDate();
     const year = date.getFullYear();
@@ -50,10 +51,10 @@ const PreviewCard = ({ id, text, date, label, members }: props) => {
             marginBottom: '8px',
           }}
         >
-          <a href={`card?id=${id}`}>{text}</a>
+        <Link href={`card?id=${id}`}>{text}</Link>
         </Typography>
         <Typography sx={{ fontSize: '11px', lineHeight: '16px', color: '#666666' }}>
-          {performDate(date)}
+          {performDate(id)}
         </Typography>
       </CardContent>
       {avatars}

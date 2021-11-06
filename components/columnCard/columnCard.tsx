@@ -1,12 +1,14 @@
-import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { observer } from 'mobx-react-lite';
-import PreviewCard from '../components/previewCard';
-import ILabel from '../utils/interfaces/ILabel';
-import IList from '../utils/interfaces/IList';
-import useStore from '../hooks/useStore';
+import { observer } from 'mobx-react';
 
-const ColumnCard = observer(({ name, cards }: IList) => {
+import PreviewCard from '../previewCard';
+import ILabel from '../../utils/interfaces/ILabel';
+import IList from '../../utils/interfaces/IList';
+import ColumnTextArea from './columnTextArea/columnTextArea';
+import ButtonNewCard from '../buttonNewCard/buttonNewCard';
+import useStore from '../../hooks/useStore';
+
+const ColumnCard = observer(({ id, name, actions }: IList) => {
   const { boards } = useStore();
 
   function dragStartHandler(event, id) {
@@ -38,8 +40,8 @@ const ColumnCard = observer(({ name, cards }: IList) => {
         flexShrink: 0,
       }}
     >
-      <Typography sx={{ fontSize: '16px', lineHeight: '24px' }}>{name}</Typography>
-      {cards?.map((card) => {
+      <ColumnTextArea listID={id} title={name} />
+      {actions?.map((card) => {
         const getLabel = (labels: ILabel[]) => {
           if (labels.length) {
             return labels[0].color;
@@ -60,7 +62,6 @@ const ColumnCard = observer(({ name, cards }: IList) => {
             <PreviewCard
               id={card.id}
               text={card.name}
-              date={card.dateCreated}
               label={getLabel(card.labels)}
               members={card.members}
               key={card.id}
@@ -68,6 +69,7 @@ const ColumnCard = observer(({ name, cards }: IList) => {
           </div>
         );
       })}
+      <ButtonNewCard idList={id} />
     </Box>
   );
 });
