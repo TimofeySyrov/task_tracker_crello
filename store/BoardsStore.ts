@@ -32,12 +32,13 @@ class BoardsStore {
   public replaceCard(id) {
     this.activeBoard!.lists?.forEach((list) => {
       list.actions?.forEach((action, i, actions) => {
-        if (action.id === id) {
-          console.log('test');
+        let x = true;
+        if (action.id === id && x) {
           const currentIndex = actions.indexOf(this.currentCard);
-          actions.splice(currentIndex, 1);
           const dropIndex = actions.indexOf(action);
-          actions.splice(dropIndex, 0, action);
+          actions.splice(currentIndex, 1);
+          actions.splice(dropIndex, 0, this.currentCard);
+          x = false;
         }
       });
     });
